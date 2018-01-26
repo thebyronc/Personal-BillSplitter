@@ -47,7 +47,7 @@ public class Sql2oUserDao implements UserDao {
     @Override
     public void deleteById(int id) {
         try(Connection con = sql2o.open()){
-            con.createQuery("DELETE * FROM users WHERE id=:id")
+            con.createQuery("DELETE FROM users WHERE id=:id")
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

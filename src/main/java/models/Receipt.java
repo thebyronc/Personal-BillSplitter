@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Receipt {
     private String receiptName;
-    private int total;
+    private double total;
     private Boolean cleared;
     private int id;
 
@@ -20,10 +20,10 @@ public class Receipt {
         return this.receiptName;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(double total) {
         this.total = total;
     }
-    public int getTotal() {
+    public double getTotal() {
         return total;
     }
 
@@ -34,6 +34,9 @@ public class Receipt {
         return cleared;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId(){
         return this.id;
     }

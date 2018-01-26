@@ -2,9 +2,6 @@ package models;
 
 import java.util.ArrayList;
 
-/**
- * Created by Guest on 1/24/18.
- */
 public class Receipt {
     private String receiptName;
     private int total;
@@ -14,6 +11,27 @@ public class Receipt {
     public Receipt (String receiptName) {
         this.receiptName = receiptName;
         this.cleared = false;
+    }
+
+    public void setReceiptName(String receiptName) {
+        this.receiptName = receiptName;
+    }
+    public String getReceiptName() {
+        return this.receiptName;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    public int getTotal() {
+        return total;
+    }
+
+    public void setCleared(Boolean cleared) {
+        this.cleared = cleared;
+    }
+    public Boolean getCleared() {
+        return cleared;
     }
 
     public int getId(){

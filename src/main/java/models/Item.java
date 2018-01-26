@@ -1,8 +1,5 @@
 package models;
 
-/**
- * Created by Guest on 1/24/18.
- */
 public class Item {
     private String itemName;
     private double cost;
@@ -22,6 +19,13 @@ public class Item {
         return this.itemName;
     }
 
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+    public double getCost() {
+        return this.cost;
+    }
+
     public void setReceiptId(int id) {
         this.receiptId = id;
     }
@@ -34,5 +38,9 @@ public class Item {
     }
     public int getUserId() {
         return this.userId;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

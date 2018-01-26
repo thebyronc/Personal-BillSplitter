@@ -39,7 +39,7 @@ public class Sql2oUserDaoTest {
     }
 
     @Test
-    public void userCanBeFoundById() {
+    public void userCanBeFoundById() throws Exception {
         User user1 = setupNewUser();
         User user2 = setupNewUser();
         userDao.add(user1);
@@ -48,7 +48,7 @@ public class Sql2oUserDaoTest {
     }
 
     @Test
-    public void getAllUsers() {
+    public void getAllUsers() throws Exception {
         User user = setupNewUser();
         userDao.add(user);
         int userId = user.getId();
@@ -56,7 +56,16 @@ public class Sql2oUserDaoTest {
     }
 
     @Test
-    public void deleteUserById() {
+    public void updateChangesUserName() throws Exception {
+        User user = setupNewUser();
+        userDao.add(user);
+        int userId = user.getId();
+        userDao.update(userId, "Foiled", "foiled@email.com");
+        assertEquals("Foiled", userDao.findById(userId).getName());
+    }
+
+    @Test
+    public void deleteUserById() throws Exception {
         User user = setupNewUser();
         userDao.add(user);
         int userId = user.getId();

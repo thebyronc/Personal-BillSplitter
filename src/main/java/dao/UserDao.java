@@ -9,5 +9,7 @@ public interface UserDao {
     User findById(int id);
     List<User> getAll();
 
+    void update(int id, String name, String email);
+
     void deleteById(int id);
 }

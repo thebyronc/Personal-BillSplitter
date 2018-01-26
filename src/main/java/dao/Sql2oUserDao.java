@@ -44,6 +44,12 @@ public class Sql2oUserDao implements UserDao {
                     .executeAndFetch(User.class);
         }
     }
+
+    @Override
+    public void update(int id, String name, String email) {
+
+    }
+
     @Override
     public void deleteById(int id) {
         try(Connection con = sql2o.open()){

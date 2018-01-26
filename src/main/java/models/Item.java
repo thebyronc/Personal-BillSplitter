@@ -7,9 +7,10 @@ public class Item {
     private int userId;
     private int id;
 
-    public Item(String itemName, double cost) {
+    public Item(String itemName, double cost, int receiptId) {
         this.itemName = itemName;
         this.cost = cost;
+        this.receiptId = receiptId;
     }
 
     public void setItemName(String itemName) {
@@ -40,6 +41,9 @@ public class Item {
         return this.userId;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId() {
         return this.id;
     }

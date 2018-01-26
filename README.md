@@ -22,6 +22,9 @@ IntelliJ IDEA
 ### Specifications
 | Behavior | Input | Expected Behavior |
 | :------------- | :------------- | :------------- |
+| Keeps track of users who participated in receipt | Add user to application | User is added to the h2 SQL database |
+| Keeps track of all Receipts added to app | A receipt is added through form | Receipt is given unique ID and is added to H2 SQL database |
+| Keeps track of items added to app | An item is added through form | Items are added to H2 SQL database and given ids to match receipts |
 
 
 ## Built With

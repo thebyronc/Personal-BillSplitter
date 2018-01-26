@@ -4,6 +4,8 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.util.Objects;
+
 public class Sql2oUserDao implements UserDao {
     private final Sql2o sql2o;
 
@@ -23,5 +25,28 @@ public class Sql2oUserDao implements UserDao {
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+    }
+
+    @Override
+    public User findById(int id) {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM users WHERE id=:id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(User.class);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sql2oUserDao)) return false;
+        Sql2oUserDao that = (Sql2oUserDao) o;
+        return Objects.equals(sql2o, that.sql2o);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(sql2o);
     }
 }

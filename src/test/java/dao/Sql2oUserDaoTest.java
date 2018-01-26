@@ -31,8 +31,19 @@ public class Sql2oUserDaoTest {
     }
 
     @Test
-    public void add() throws Exception {
+    public void addingUserSetsId() throws Exception {
         User user = setupNewUser();
+        int originalUserId = user.getId();
+        userDao.add(user);
+        assertNotEquals(originalUserId, user.getId());
+    }
+
+    @Test
+    public void userCanBeFoundById() {
+        User user = setupNewUser();
+        userDao.add(user);
+        int userId = user.getId();
+        assertEquals(user.getName(), userDao.findById(userId).getName());
     }
 
     public User setupNewUser() {

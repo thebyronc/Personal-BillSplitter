@@ -40,6 +40,15 @@ public class Sql2oUserDaoTest {
 
     @Test
     public void userCanBeFoundById() {
+        User user1 = setupNewUser();
+        User user2 = setupNewUser();
+        userDao.add(user1);
+        userDao.add(user2);
+        assertEquals(2, userDao.getAll().size());
+    }
+
+    @Test
+    public void getAllUsers() {
         User user = setupNewUser();
         userDao.add(user);
         int userId = user.getId();

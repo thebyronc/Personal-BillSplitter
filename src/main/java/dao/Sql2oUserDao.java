@@ -47,7 +47,16 @@ public class Sql2oUserDao implements UserDao {
 
     @Override
     public void update(int id, String name, String email) {
-
+        String sql = "UPDATE users SET (name, email) = (:name, :email) WHERE id=:id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("name", name)
+                    .addParameter("email", email)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 
     @Override

@@ -55,6 +55,15 @@ public class Sql2oUserDaoTest {
         assertEquals(user.getName(), userDao.findById(userId).getName());
     }
 
+    @Test
+    public void deleteUserById() {
+        User user = setupNewUser();
+        userDao.add(user);
+        int userId = user.getId();
+        userDao.deleteById(userId);
+        assertEquals(0, userDao.getAll().size());
+    }
+
     public User setupNewUser() {
         return new User("Byron", "byron@email.com");
     }

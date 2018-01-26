@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class Receipt {
     private String receiptName;
     private int total;
-    private Boolean flag;
+    private Boolean cleared;
     private int id;
 
     public Receipt (String receiptName) {
         this.receiptName = receiptName;
-        this.flag = false;
+        this.cleared = false;
     }
 
     public int getId(){

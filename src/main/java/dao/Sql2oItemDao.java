@@ -36,7 +36,22 @@ public class Sql2oItemDao implements ItemDao {
                     .executeAndFetchFirst(Item.class);
         }
     }
-
+    @Override
+    public List<Item> findItemsByReceiptId(int id) {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM items WHERE receiptId=:receiptId")
+                    .addParameter("receiptId", id)
+                    .executeAndFetch(Item.class);
+        }
+    }
+    @Override
+    public List<Item> findItemsByUserId(int id) {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM items WHERE userId=:userId")
+                    .addParameter("userId", id)
+                    .executeAndFetch(Item.class);
+        }
+    }
     @Override
     public List<Item> getAll() {
         try(Connection con = sql2o.open()){

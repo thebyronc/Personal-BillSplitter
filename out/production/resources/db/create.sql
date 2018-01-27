@@ -12,10 +12,11 @@ CREATE TABLE IF NOT EXISTS receipts (
   total INTEGER,
   cleared BOOLEAN
 );
---
---CREATE TABLE IF NOT EXISTS items (
---  id int PRIMARY KEY auto_increment,
---  teamId int,
---  name VARCHAR,
---  email VARCHAR
---);
+
+CREATE TABLE IF NOT EXISTS items (
+  id int PRIMARY KEY auto_increment,
+  itemName VARCHAR,
+  cost INTEGER,
+  receiptId INTEGER,
+  userId INTEGER
+);

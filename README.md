@@ -26,6 +26,16 @@ IntelliJ IDEA
 | Keeps track of all Receipts added to app | A receipt is added through form | Receipt is given unique ID and is added to H2 SQL database |
 | Keeps track of items added to app | An item is added through form | Items are added to H2 SQL database and given ids to match receipts |
 
+### Routing Examples with POSTMAN
+Add Receipt via Routing
+![alt text](html/successfulPost.PNG)
+
+Add Item to Receipt
+![alt text](html/addNewItem.PNG)
+
+View All Receipts
+![alt text](html/getAllReceipts.PNG)
+
 
 ## Built With
 
